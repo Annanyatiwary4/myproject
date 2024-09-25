@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuze-Homepage</title>
+    {% load static %}
+    <link rel="stylesheet" href="http://127.0.0.1:5500/fuze/static/css/homepage.css">
+    <!-- iconscoutCdn -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <h2 class="log">
+                Fuze
+            </h2>
+            <div class="search-bar">
+                <i class="uil uil-search"></i>
+                <input type="search" class="search-text"placeholder="search for users, rooms, and projects">
+            </div>
+            <div class="create">
+                <button class="btn"type="submit">Create</button>
+                <div class="Profile-photo">
+                    <img src="http://127.0.0.1:5500/fuze/static/images/profilepic.png" alt="Profile Picture">
+                </div>
+            </div>
+        </div>
+    </nav>
+     
+    
+
+    <main>
+        <div class="container">
+           
+            <div class="left">
+                <a class="Profile">
+                    <div class="Profile-photo">
+                        <img src="http://127.0.0.1:5500/fuze/static/images/profilepic.png" alt="Profile Picture">
+                    </div>
+                    <div class="handle">
+                        <h4> Annanya</h4>
+                        <p class="text-muted">@Annanya</p>
+                    </div>
+                </a>
+                
+       
+        <div class="sidebar">
+                <a class="menu-item">
+                <span><i class="uil uil-house-user"></i></span><h3>Home</h3>
+            </a>
+              <a class="menu-item">
+                <span><i class="uil uil-users-alt"></i></span><h3>Room</h3>
+                </a>
+                <a class="menu-item">
+                <span><i class="uil uil-comments-alt" id="message-notification"><small class="notification-count">6</small></i></span><h3>Messages</h3>
+                </a>
+                <a class="menu-item" id="notifications">
+                    <span><i class="uil uil-bell"> <small class="notification-count">9+</small></i></span><h3>Notifications</h3>
+                    
+                    <div class="notification-popup">
+                    <div>
+                    <div class="Profile-photo">
+                        <img src="http://127.0.0.1:5500/fuze/static/images/image2.png" alt="Profile Picture">
+                        </div>
+                        <div class="notification-body">
+                            <b>Pisukee</b>accepted your friend request
+                            <small class="test-muted">2 hours ago</small>
+                            </div>
+                        </div>
+                        </div>
+                    </a>
+                <a class="menu-item">
+                <span><i class="uil uil-bookmark-full"></i></span><h3>BookMarks</h3>
+                </a>
+                <a class="menu-item">
+                <span><i class="uil uil-palette"></i></span><h3>Theme</h3>
+                </a>
+
+                <a class="menu-item">
+                <span><i class="uil uil-comment-question"></i></span><h3>Ask me??</h3>
+                </a>
+                <a class="menu-item ">
+                <span><i class="uil uil-sliders-v-alt"></i></span><h3>Settings</h3>
+                </a>
+        </div>
+           
+        <label for="create" class="btn btn-primary">Create Post</label>
+            </div>
+            
+           <!-- Middle Section -->
+           <div class="middle">
+            <!-- Create Post Form -->
+            <form class="create-post">
+                <div class="Profile-photo">
+                    <img src="http://127.0.0.1:5500/fuze/static/images/profilepic.png" alt="Profile Picture">
+                </div>
+                <input type="text" placeholder="What's on your mind?" id="create-post">
+                <input type="submit" value="Post" class="btn btn-primary">
+            </form>
+
+            <!-- Feeds Section -->
+            <div class="feeds">
+                <!-- First Feed -->
+                <div class="feed">
+                    <div class="head">
+                        <div class="user">
+                            <div class="Profile-photo">
+                                <img src="http://127.0.0.1:5500/fuze/static/images/image4.png" alt="Profile Picture">
+                            </div>
+                            <div class="info">
+                                <h3>Kiyoo</h3>
+                                <small>Dubai, 15 min ago</small>
+                            </div>
+                        </div>
+                        <span class="edit"><i class="uil uil-ellipsis-h"></i></span>
+                    </div>
+                    <div class="photo">
+                        <img src="http://127.0.0.1:5500/fuze/static/images/image3.png" alt="Feed Image">
+                    </div>
+                    <div class="action-button">
+                        <div class="interaction-buttons">
+                            <span><i class="uil uil-heart"></i></span>
+                            <span><i class="uil uil-comment-alt"></i></span>
+                            <span><i class="uil uil-share"></i></span>
+                        </div>
+                        <div class="liked-by">
+                            <span><img src="http://127.0.0.1:5500/fuze/static/images/image5.png" alt="Liked by"></span>
+                            <p>Liked by <b>Anna</b>, <b>Aash</b>, and <b>20</b> others</p>
+                        </div>
+                        <div class="comments text-muted">View all 30 comments</div>
+                    </div>
+                </div>
+                <div class="feed">
+                    <div class="head">
+                        <div class="user">
+                            <div class="Profile-photo">
+                                <img src="http://127.0.0.1:5500/fuze/static/images/image4.png" alt="Profile Picture">
+                            </div>
+                            <div class="info">
+                                <h3>Kiyoo</h3>
+                                <small>Dubai, 15 min ago</small>
+                            </div>
+                        </div>
+                        <span class="edit"><i class="uil uil-ellipsis-h"></i></span>
+                    </div>
+                    <div class="photo">
+                        <img src="http://127.0.0.1:5500/fuze/static/images/image3.png" alt="Feed Image">
+                    </div>
+                    <div class="action-button">
+                        <div class="interaction-buttons">
+                            <span><i class="uil uil-heart"></i></span>
+                            <span><i class="uil uil-comment-alt"></i></span>
+                            <span><i class="uil uil-share"></i></span>
+                        </div>
+                        <div class="liked-by">
+                            <span><img src="http://127.0.0.1:5500/fuze/static/images/image5.png" alt="Liked by"></span>
+                            <p>Liked by <b>Anna</b>, <b>Aash</b>, and <b>20</b> others</p>
+                        </div>
+                        <div class="comments text-muted">View all 30 comments</div>
+                    </div>
+                </div>
+
+               
+                <div class="feed">
+                    <div class="head">
+                        <div class="user">
+                            <div class="Profile-photo">
+                                <img src="http://127.0.0.1:5500/fuze/static/images/image4.png" alt="Profile Picture">
+                            </div>
+                            <div class="info">
+                                <h3>Kiyoo</h3>
+                                <small>Dubai, 15 min ago</small>
+                            </div>
+                        </div>
+                        <span class="edit"><i class="uil uil-ellipsis-h"></i></span>
+                    </div>
+                    <div class="photo">
+                        <img src="http://127.0.0.1:5500/fuze/static/images/image3.png" alt="Feed Image">
+                    </div>
+                    <div class="action-button">
+                        <div class="interaction-buttons">
+                            <span><i class="uil uil-heart"></i></span>
+                            <span><i class="uil uil-comment-alt"></i></span>
+                            <span><i class="uil uil-share"></i></span>
+                        </div>
+                        <div class="liked-by">
+                            <span><img src="http://127.0.0.1:5500/fuze/static/images/image5.png" alt="Liked by"></span>
+                            <p>Liked by <b>Anna</b>, <b>Aash</b>, and <b>20</b> others</p>
+                        </div>
+                        <div class="comments text-muted">View all 30 comments</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+
+
+        
+         
+        <div class="right">
+            <div class="messages">
+                <div class="heading">
+                 <h4> Messages</h4><i class="uil uil-edit"></i>
+                 </div>
+            
+                <div class="search-bar">
+                 <i class="uil uil-search"></i>
+                 <input type="search" placeholder="search messages" id="'message-search">
+                </div>
+            
+                <div class="category">
+                  <h6 class="active">Primary</h6>
+                    <h6>General</h6>
+                  <h6 class="message-requests">Requests(7)</h6> 
+                </div>
+                <div class="message">
+                   <div class="Profile-photo">
+                      <img src="http://127.0.0.1:5500/fuze/static/images/image6.png">
+                    </div>
+                    <div class="message-body">
+                        <h5>Daniel</h5>
+                        <p class="text-bold">2 new messages</p>
+                    </div>
+                </div>
+                 <div class="message">
+                        <div class="Profile-photo">
+                            <img src="http://127.0.0.1:5500/fuze/static/images/image3.png">
+                            <div class="active"></div>
+                        </div>
+                    <div class="message-body">
+                        <h5>Ariel</h5>
+                        <p class="text-bold">2 new messages</p>
+                    </div>
+                    
+                </div>
+            </div>
+           
+         
+            <div class="friend-request">
+                <h4>Requests</h4>
+                <div class="request">
+                    <div class="info">
+                        <div class="Profile-photo">
+                            <img src="http://127.0.0.1:5500/fuze/static/images/image7.png">
+                        </div>
+                    </div>
+                    <div>
+                        <h5>pisuke</h5>
+                        <p class="text-muted">
+                            8 mutual friends
+                        </p>
+                        <div class="action">
+                            <button class="btn btn-primary">Accept</button>
+                            <button class="btn btn-primary">Decline</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        </div>
+    </main>
+
+
+</body>
+</html>
