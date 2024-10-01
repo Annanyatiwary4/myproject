@@ -76,7 +76,7 @@ def index(request):
     return render(request,'index.html')
 
 def setting(request):
-    return render(request,'base/settings.html')
+    return render(request,'settings.html')
 
 
 
