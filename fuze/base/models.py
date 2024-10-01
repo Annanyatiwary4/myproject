@@ -1,24 +1,18 @@
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.db import models
 from django.utils import timezone
 
-
+User = get_user_model()
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)  # Link to Django's User model
-    profile_pic = models.ImageField(upload_to='profile_pic/')
-    bio = models.TextField(max_length=160, blank=True, null=True)
-    cover = models.ImageField(upload_to='covers/', blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)  # Link to Django's User model
+    id_user=models.IntegerField()
+    bio =models.TextField(blank=True)
+    profile_pic = models.ImageField(upload_to='profile_pic',default='blank-profile-picture.png')
+   
+    
 
     def __str__(self):
-        return self.username
+        return self.user.username
 
-    def serialize(self):
-        return {
-            'id': self.id,
-            "username": self.username,
-            "profile_pic": self.profile_pic.url,
-            "first_name": self.first_name,
-            "last_name": self.last_name
-        }
 
     

@@ -11,6 +11,7 @@ urlpatterns = [
     path('loginn/',views.loginn,name='loginn'),
     path('logout/',views.logout,name='logout'),
     path('index/',views.index,name='index'),
+    path('setting/',views.setting,name='setting'),
    
 ]
 

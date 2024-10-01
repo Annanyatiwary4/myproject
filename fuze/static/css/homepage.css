@@ -40,7 +40,7 @@ body{
 }
 
 .container{
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -146,6 +146,7 @@ main .container{
     grid-template-columns:18vw auto 20vw;
     column-gap: 2rem;
     position: relative;
+
 }
  
 main .container .left
@@ -415,95 +416,6 @@ main .container .right {
    border-radius: 10%;
 
 }
-
-.right .messages{
-    background: var(--color-white);
-    border-radius: var(--card-border-radius);
-    padding: var(--card-padding);
-}
-
-.right .messages .heading{
-    display:flex;
-    align-items: center;
-    margin-top: auto;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
-}
-
-.right .messages i{
-    font-size: 1.2rem;
-}
-
-.right .messages .search-bar{
-    background: rgba(149, 143, 143, 0.266);
-}
-
-.right .messages .category{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-    
-}
-
-.right .messages .category h6{
-    width: 100%;
-    text-align: center;
-    border-bottom: 4px solid var(--color-light);
-    padding-bottom: 0.5rem;
-    font-size: 0.85rem;
-
-}
-
-.right .messages .category .active{
-    border-color: var(--color-dark);
-}
-
-.right .messages .message-requests{
-    color: var(--color-primary);
-}
-.right .messages .message{
-    display: flex;
-    gap: 1rem;
-    
-    margin-bottom: 1rem;
-    align-items: start;
-}
-
-.right .message .Profile-photo{
-    position: relative;
-    overflow: visible;
-}
-
-.right .Profile-photo img{
-    border-radius: 50%;
-}
-
-.right .messages .message:last-child{
-    margin:0;
-}
-.right .messages .message p{
-    font-size: 0.7rem;
-    width: fit-content;
-    
-}
-.message-body {
-    flex:0.5 ; /* Allow this section to take available space */
-}
-.right .messages .message .Profile-photo .active{
-    width: 0.8rem;
-    height: 0.8rem;
-    border-radius:50%;
-    background-color: var(--color-success);
-    border: 3px solid var(--color-white);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right:0;
-    box-shadow: 0 0 5px rgba(0, 128, 0, 0.7);
-}
-
-
-
 
 .right .friend-request {
     margin-bottom: 1rem; /* Space below the friend request section */

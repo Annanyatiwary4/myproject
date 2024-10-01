@@ -1,13 +1,9 @@
 from django.shortcuts import render,redirect
-from django.http import HttpResponse,JsonResponse
-from django.contrib.auth.models import User  # Import User model for creating new users
+from django.http import HttpResponse
+from django.contrib.auth.models import User,auth  # Import User model for creating new users
 from django.contrib import messages  # Import messages framework for displaying messages to the user
 from django.contrib.auth import authenticate,login,logout #Handles user's credentials ,login,logout and authentications.
 from django.contrib.auth.decorators import login_required #Handles accesibility of view.
-from django.views.decorators.csrf import csrf_exempt
-from django.core.paginator import Paginator #divide items into pages
-import json
-from django.db import IntegrityError
 from .models import *
 
 def home(request):
@@ -18,66 +14,70 @@ def register(request):
         uname=request.POST.get('username')
         fname=request.POST.get('first_name')
         lname=request.POST.get('last_name')
-        emailid=request.POST.get('email')
-        profile = request.FILES.get("profile")
-        print(f"--------------------------Profile: {profile}----------------------------")
-        cover = request.FILES.get('cover')
-        print(f"--------------------------Cover: {cover}----------------------------")
+        email=request.POST.get('email')
         pass1=request.POST.get('pass1')
         pass2=request.POST.get('pass2')
-        
-        if pass1!= pass2:
-            return render(request, "templates/signup.html", {
-                "message": "Passwords must match."
-            })
-            
-            
-            #attempt to create new user
-        try:
-            user = User.objects.create_user(uname, emailid, pass1)
-            user.first_name = fname
-            user.last_name = lname
-            if profile is not None:
-                user.profile_pic = profile
+       
+         #check if password is same 
+         
+        if pass1 == pass2:
+            if User.objects.filter(email=email).exists():   #check if email already registered
+                messages.info(request,'email already exists!')
+                return redirect('register')
+            elif User.objects.filter(username=uname).exists():   # check if  same username exists 
+                messages.info(request,'username already taken!!')
+                return redirect('register')
             else:
-                user.profile_pic = "profile_pic/blank-profile-picture.png"
-            user.cover = cover           
-            user.save()
-            Follower.objects.create(user=user)
-        except IntegrityError:
-            return render(request, "network/register.html", {
-                "message": "Username already taken."
-            })
-        login(request, user)
-        return HttpResponse(request,'index')
+                user = User.objects.create_user(username=uname,first_name=fname,last_name=lname, email=email, password=pass1)
+                user.save()
+                
+                #log user in and redirect to settings page
+                user_login = auth.authenticate(username=uname,password=pass1)
+                auth.login(request,user)
+                
+                # create a profile object for the new user
+                
+                user_model=User.objects.get(username=uname)
+                new_profile=Profile.objects.create(user=user_model,id_user=user_model.id)
+                new_profile.save()
+                return redirect('setting')
+        else:
+            messages.info(request,'password does not matched!!')
+            return redirect('register')
+        
+            
     else:
-        return render(request,'signup.html')
-    
+        return render(request,'signup.html')  
+            
 
 #view for loginpage
-
 def loginn(request):
-    if request.method=="POST":
-        username=request.POST["username"]
-        password=request.POST["pass1"]
-        user=authenticate(request,username=username,password=password)
-        
+    if request.method =='POST':
+        uname=request.POST['username']
+        pass1=request.POST['pass1']
+        user = auth.authenticate(username=uname,password=pass1)
         if user is not None:
-            login(request,user)
-            return HttpResponse
-            return render(request,'loginn.html')
+            auth.login(request,user)
+            return redirect('index')
         else:
-            return render(request,'loginn.html',{
-            "message": "Invalid username and/or password."
-        })
-    else:
+            messages.info(request,'credentials Invalid')
+            return redirect('loginn')
+    else:    
         return render(request,'loginn.html')
-  
+
+
+
+ #view for logoutpage
 def logout(request):
-    return HttpResponse(request,'index') 
+    return redirect('home')
 
-#view for mainpage
-
+#view for index
 def index(request):
     return render(request,'index.html')
-   
+
+def setting(request):
+    return render(request,'base/settings.html')
+
+
+
+
