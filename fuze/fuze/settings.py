@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "daphne",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -77,7 +78,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'fuze.wsgi.application'
+#WSGI_APPLICATION = 'fuze.wsgi.application'
+ASGI_APPLICATION = 'fuze.asgi.application'
 
 
 # Database
