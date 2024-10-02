@@ -44,7 +44,7 @@
             <h2>Welcome to Fuzee</h2>
 
             <!-- Form for creating a room -->
-            <form id="create-room-form" action="{% url 'create_room' %}" method="post">
+            <form id="create-room-form" action="{% url 'room' %}" method="post">
                 {% csrf_token %}
                 <div class="form-group">
                     <i class="fas fa-user"></i>

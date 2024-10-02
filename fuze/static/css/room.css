@@ -192,6 +192,7 @@ button:hover {
 }
 
 #editor-container {
+    
     flex: 1; /* Allow the editor to take available space */
     background-color: #fff; /* White background for the editor area */
     border: 1px solid #ddd; /* Border around the editor */
