@@ -44,12 +44,8 @@ gsap.from(".flex-item-1", {
     duration: 1,
 });
 
-
-
-
-
 // ====  IMAGE ==== //
-gsap.from(".my-img img", {
+gsap.from(".tagline", {
     opacity: 0,
     y: 20,
     delay: 3,

@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Fuze-A collaborative workspace</title>
+        <title>Medme Landing Page - Responsive Landing Page</title>
         <!-- ======= STYLE ====== -->
          {% load static %}
          <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -31,18 +31,17 @@
                     </div>
                     <ul class="nav-link-list">
                         <li class="nav-link-list-item">
-                            <a class="nav-link active" href="#">Home</a>
+                            <a class="nav-link active" href="#">home</a>
                         </li>
                         <li class="nav-link-list-item">
-                            <a class="nav-link" href="{% url 'about' %}">About</a>
+                            <a class="nav-link" href="#">product</a>
                         </li>
                         <li class="nav-link-list-item">
-                            <a class="nav-link" href="#">Features</a>
+                            <a class="nav-link" href="#">contact</a>
                         </li>
                         <li class="nav-link-list-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="#">about</a>
                         </li>
-                        
                     </ul>
                 </div>
                 <button class="toggle_btn">
@@ -55,20 +54,26 @@
                <!-- ===== GRID-ITEM-1 ===== -->
                <div class="grid-item-1">
                   <div class="flex-item-1">
+                     <p class="product-intro">Link,Learn,Lead</p>
                      <h1 class="product-tagline">
-                        <span>F</span>uzee
+                        "Where ideas meet,<span> minds grow, and</span> success follows."
                      </h1>
-                      
-                     <a href="{% url 'register' %}"class="cta-btn"><b>join us<b> </a>
-
+                     <p class="product-desc">
+                        
+the ultimate platform for students to collaborate,
+share knowledge, and engage in real-time discussions. 
+With features like live document editing, group chats,
+and content sharing, fuze makes teamwork and learning seamless. 
+                     </p>
+                     <a href="{% url  'signup' %}" class="cta-btn">Sign Up</a>
                   </div>
                   
                </div>
                <!-- ===== GRID-ITEM-2 ===== -->
                <div class="grid-item-2">
-                <h1 class="tagline">
-                   <i> "Link,<br><span> Learn,<br> and </span> Lead"</i>
-                 </h1>
+                  <div class="my-img">
+                     <img src="{% static 'images\image1.png' %}" alt="img" />
+                  </div>
                </div>
             </section>
          </div>

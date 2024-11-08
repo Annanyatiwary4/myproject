@@ -166,22 +166,29 @@ ul li {
     font-weight: 500;
 }
 .product-tagline {
-    font-size: 3.2rem;
+    font-size: 4rem;
     color: var(--lg-text-color);
     line-height: 1.25;
     text-transform: capitalize;
-    margin-top: 1.5rem;
+    margin-top: 5rem;
+}
+.tagline {
+    font-size: 5rem;
+    color: var(--lg-text-color);
+    line-height: 1.25;
+    margin-top: 2.4rem;
+    margin-left: 4.1rem;
+}
+.tagline span {
+    font-size: 5rem;
+    color: var(--text-color);
+    
 }
 .product-tagline span {
+    font-size:8rem;
     color: var(--text-color);
 }
 
-.product-desc {
-    color: var(--sm-text-color);
-    font-weight: 500;
-    margin-top: 2rem;
-    font-size: 1rem;
-}
 
 .cta-btn:active,
 .cta-btn:visited {
@@ -189,23 +196,23 @@ ul li {
 }
 .cta-btn {
     display: block;
-    width: 150px;
-    height: 43px;
+    width: 200px;
+    height: 50px;
     background-color: var(--text-color);
-    font-size: 1rem;
+    font-size: 1.5rem;
     letter-spacing: 0.3px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-transform: capitalize;
-    border-radius: 5px;
+    border-radius: 30px;
     margin-top: 3rem;
     transition: 0.5s;
     color: var(--gradient-end);
     box-shadow: 0px 3px 10px 0px rgba(1, 126, 184, 0.75);
 }
 .cta-btn:hover {
-    background-color: #0e7fcb;
+    background-color: #51b2f3;
 }
 .cta-btn:active {
     transform: scale(0.85);
@@ -216,15 +223,6 @@ ul li {
     gap: 2rem;
     padding-left: 0.7rem;
 }
-
-.my-img {
-    width: 100%;
-    height: 100%;
-}
-.my-img img {
-    width: 100%;
-    height: 100%;
-} 
 
 @media screen and (max-width: 991px) {
     body {
@@ -272,7 +270,7 @@ ul li {
     }
     .grid-cols-2 {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 1.5rem;
     }
     .grid-item-1 {
     gap: 3rem;
@@ -287,23 +285,10 @@ ul li {
     .product-tagline {
     font-size: 2.5rem;
     }
-    .product-desc {
-    font-size: 0.8rem;
-    padding: 0 1.25rem;
-    }
     .flex-item-2 {
     width: 100%;
     justify-content: center;
     }
     
-    .my-img {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    }
-    .my-img img {
-    width: 20rem;
-    }
     }
     

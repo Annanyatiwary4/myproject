@@ -9,6 +9,9 @@ from .models import *
 def home(request):
     return render(request,'home.html')
 
+def about(request):
+    return render(request,'about.html')
+
 def register(request):
     if request.method=='POST':
         uname=request.POST.get('username')

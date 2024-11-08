@@ -7,6 +7,7 @@ from .import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('about/', views.about, name='about'),
     path('register/',views.register,name='register'),
     path('loginn/',views.loginn,name='loginn'),
     path('logout/',views.logout,name='logout'),
